@@ -42,6 +42,10 @@ public class Principal {
         
         ArrayList<String> lista3 = SeccionActividadesCapacitacionFormal.obtenerPeriodoEnElQueDeseaLlevarActividadesDeCapacitacionFormalProfesor();
         System.out.println(lista3);
+        
+        FrameProfesoresInteresadoEnCursos  ventana = new FrameProfesoresInteresadoEnCursos();
+        ventana.show();
+        
     }
     
 }
