@@ -61,4 +61,30 @@ public class SeccionActividadesCapacitacionFormal {
         
         return periodos;
     }
+    
+    public static String obtenerLugarDondeRealizariaActividadesComoParteDeSuCapacitacionFormalProfesor(){
+        
+        if(datosConsulturiaProfesor.getCell(1, 141).getContents().toString().equals("X")){
+            return datosConsulturiaProfesor.getCell(0, 141).getContents().toString();
+        }
+        return datosConsulturiaProfesor.getCell(0, 142).getContents().toString();
+   }
+   public static ArrayList<String> obtenerTipoActualizacionQueSignificariaCapacitacionFormalProfesor(){
+        
+        ArrayList<String> tiposActualizacion = new ArrayList<String>();
+        
+        for(int i=144;i<=146;i++){
+            if(datosConsulturiaProfesor.getCell(1, i).getContents().toString().equals("X")){
+            	tiposActualizacion.add(datosConsulturiaProfesor.getCell(0, i).getContents().toString());
+            }
+            
+        }
+        
+        return tiposActualizacion;
+    }
+   public static String obtenerAñoQueEstimaDurarEnCadaCapacitacionFormalProfesor(){
+       
+       return datosConsulturiaProfesor.getCell(1, 148).getContents().toString();
+      
+   }
 }
