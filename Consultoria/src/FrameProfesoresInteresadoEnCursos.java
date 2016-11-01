@@ -5,7 +5,11 @@
  */
 
 import Consultas.Consultas;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -125,6 +129,7 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
         Electiva1 = new javax.swing.JButton();
         Electiva2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        InformationProfessorButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Profesores Interesados");
@@ -462,7 +467,15 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plan.PNG"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 620));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -60, 1070, 730));
+
+        InformationProfessorButton.setText("Información Profesores");
+        InformationProfessorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InformationProfessorButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(InformationProfessorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 620, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -632,6 +645,23 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
         Consultar("TI6000 - Electiva 2");
     }//GEN-LAST:event_Electiva2MouseClicked
 
+    private void InformationProfessorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InformationProfessorButtonActionPerformed
+        this.dispose();
+        try {
+            new VentanaNombreProfesores().setVisible(true);
+            
+// TODO add your handling code here:
+        } catch (IOException ex) {
+            Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchMethodException ex) {
+            Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvocationTargetException ex) {
+            Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_InformationProfessorButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -697,6 +727,7 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
     private javax.swing.JButton Gestion_y_Toma_de_Decisiones_Financieras;
     private javax.swing.JButton Informacion_Contable_1;
     private javax.swing.JButton Informacion_Contable_2;
+    private javax.swing.JButton InformationProfessorButton;
     private javax.swing.JButton Infraestructura_Tecnologica_I;
     private javax.swing.JButton Infraestructura_Tecnologica_II;
     private javax.swing.JButton Ingenieria_de_requerimientos;

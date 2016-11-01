@@ -8,6 +8,8 @@ package Consultas;
 import consultoria.DatosProfesor;
 import consultoria.LeerDatos;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,5 +38,20 @@ public class Consultas {
         }
         return profesores;
     }
+        public ArrayList<Object> getDataByMethod(String nombreMetodo) throws IOException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+        System.out.println(nombreMetodo);
+        ArrayList<Object> datos = new ArrayList<>();
+        for (int i = 0; i < LeerDatos.CantidadSheet(); i++) {
+            DatosProfesor.datosConsulturiaProfesor = LeerDatos.procesarBaseDatosExcel(i);
+            Class datosProfesor = DatosProfesor.class;
+            Method metodo = datosProfesor.getMethod(nombreMetodo);
+            datos.add((Object) metodo.invoke(null, null).toString());
+      
+        }
+        //System.out.println(datos);
+        return datos;
+    }
+    
+    
 
 }

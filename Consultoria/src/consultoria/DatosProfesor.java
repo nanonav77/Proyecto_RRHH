@@ -86,19 +86,17 @@ public class DatosProfesor {
         
         return datosConsulturiaProfesor.getCell(1, 74).getContents().toString();
     }
-    public static boolean verificarSiACanceladoCuotasProfesor(Sheet datosConsulturiaProfesor){
+    // Si esta vacio esta tirando que si a cancelado cuotas.. Arreglar.
+    public static String conoceCuotasCanceladas(){
         
-         if(datosConsulturiaProfesor.getCell(1, 76).getContents().toString().equals("No")){
-             return false;
-         }
-         return true;
+         return datosConsulturiaProfesor.getCell(1, 76).getContents().toString();
     }
     
     public static String obtenerCuotasCanceladasProfesor(){
         
         return datosConsulturiaProfesor.getCell(1, 78).getContents().toString();
     }
-    public static String obtenerEdadPensionarseProfesor(Sheet datosConsulturiaProfesor){
+    public static String obtenerEdadPensionarseProfesor(){
         
         return datosConsulturiaProfesor.getCell(1, 80).getContents().toString();
     }
