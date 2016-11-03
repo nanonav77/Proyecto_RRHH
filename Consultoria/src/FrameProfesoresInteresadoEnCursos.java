@@ -87,126 +87,102 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Sistemas_de_Informacion_Empresarial = new javax.swing.JButton();
-        Planificaion_Estrategica_de_TI = new javax.swing.JButton();
-        Administracion_de_Servicios_de_TI_2 = new javax.swing.JButton();
-        Bases_de_Datos = new javax.swing.JButton();
-        Bases_de_Datos_Avanzadas = new javax.swing.JButton();
-        Diseño_de_Softaware = new javax.swing.JButton();
-        Inteligencia_de_Negocios = new javax.swing.JButton();
-        Negocios_Electronicos = new javax.swing.JButton();
-        Administracion_de_Servicios_de_TI_1 = new javax.swing.JButton();
-        Introduccion_a_la_programacion = new javax.swing.JButton();
-        Auditoria_de_TI = new javax.swing.JButton();
-        Administracion_de_proyectos_1 = new javax.swing.JButton();
-        Administracion_de_proyectos_2 = new javax.swing.JButton();
-        Ingenieria_de_requerimientos = new javax.swing.JButton();
-        Comportamiento_Organizacional_y_Gestion_del_Cambio = new javax.swing.JButton();
-        Especificacion_de_Software = new javax.swing.JButton();
-        Adquisicion_de_TI = new javax.swing.JButton();
-        Teorias_de_las_organizaciones_y_sus_procesos = new javax.swing.JButton();
-        Informacion_Contable_1 = new javax.swing.JButton();
-        Planificacion_y_Presupuesto = new javax.swing.JButton();
-        Economia = new javax.swing.JButton();
-        Gestion_y_Toma_de_Decisiones_Financieras = new javax.swing.JButton();
-        Mercadeo_de_Productos_de_Alta_Calidad = new javax.swing.JButton();
-        Gestion_de_Recursos_Humanos = new javax.swing.JButton();
-        Produccion_Logistica_y_Calidad = new javax.swing.JButton();
-        Consultoria_de_TI = new javax.swing.JButton();
-        Espiritu_Emprendedor_y_Creacion_de_Empresas = new javax.swing.JButton();
-        Formulacion_y_Evaluacion_de_Proyectos_de_TI = new javax.swing.JButton();
-        Modelo_de_Toma_de_Decisiones = new javax.swing.JButton();
-        Informacion_Contable_2 = new javax.swing.JButton();
-        Costos_en_Ambientes_Informaticos = new javax.swing.JButton();
-        Algoritmos_y_Estructuras_de_Datos = new javax.swing.JButton();
+        InformationProfessorButton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         TallerDeProgramacion = new javax.swing.JButton();
         OrganizacionArquitecturaComputadores = new javax.swing.JButton();
         LenguajesDeProgramacion = new javax.swing.JButton();
+        Introduccion_a_la_programacion = new javax.swing.JButton();
+        Algoritmos_y_Estructuras_de_Datos = new javax.swing.JButton();
+        Teorias_de_las_organizaciones_y_sus_procesos = new javax.swing.JButton();
+        Administracion_de_proyectos_1 = new javax.swing.JButton();
+        Bases_de_Datos = new javax.swing.JButton();
+        Administracion_de_proyectos_2 = new javax.swing.JButton();
+        Ingenieria_de_requerimientos = new javax.swing.JButton();
+        Bases_de_Datos_Avanzadas = new javax.swing.JButton();
         Infraestructura_Tecnologica_I = new javax.swing.JButton();
+        Diseño_de_Softaware = new javax.swing.JButton();
+        Comportamiento_Organizacional_y_Gestion_del_Cambio = new javax.swing.JButton();
+        Especificacion_de_Software = new javax.swing.JButton();
+        Inteligencia_de_Negocios = new javax.swing.JButton();
         Infraestructura_Tecnologica_II = new javax.swing.JButton();
         Arquitectura_de_Aplicaciones = new javax.swing.JButton();
+        Negocios_Electronicos = new javax.swing.JButton();
         Administracion_de_Procesos_de_Negocios = new javax.swing.JButton();
+        Administracion_de_Servicios_de_TI_1 = new javax.swing.JButton();
+        Sistemas_de_Informacion_Empresarial = new javax.swing.JButton();
+        Administracion_de_Servicios_de_TI_2 = new javax.swing.JButton();
+        Planificaion_Estrategica_de_TI = new javax.swing.JButton();
+        Adquisicion_de_TI = new javax.swing.JButton();
         Electiva1 = new javax.swing.JButton();
+        Auditoria_de_TI = new javax.swing.JButton();
+        Consultoria_de_TI = new javax.swing.JButton();
+        Espiritu_Emprendedor_y_Creacion_de_Empresas = new javax.swing.JButton();
+        Formulacion_y_Evaluacion_de_Proyectos_de_TI = new javax.swing.JButton();
         Electiva2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        InformationProfessorButton = new javax.swing.JButton();
+        Gestion_de_Recursos_Humanos = new javax.swing.JButton();
+        Modelo_de_Toma_de_Decisiones = new javax.swing.JButton();
+        Produccion_Logistica_y_Calidad = new javax.swing.JButton();
+        Mercadeo_de_Productos_de_Alta_Calidad = new javax.swing.JButton();
+        Gestion_y_Toma_de_Decisiones_Financieras = new javax.swing.JButton();
+        Economia = new javax.swing.JButton();
+        Planificacion_y_Presupuesto = new javax.swing.JButton();
+        Costos_en_Ambientes_Informaticos = new javax.swing.JButton();
+        Informacion_Contable_2 = new javax.swing.JButton();
+        Informacion_Contable_1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Profesores Interesados");
+        setTitle("Consultoría ATI");
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
-        Sistemas_de_Informacion_Empresarial.setBorder(null);
-        Sistemas_de_Informacion_Empresarial.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Sistemas_de_Informacion_EmpresarialMouseClicked(evt);
+        InformationProfessorButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        InformationProfessorButton.setText("Profesores");
+        InformationProfessorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InformationProfessorButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(Sistemas_de_Informacion_Empresarial, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 90, 80));
+        getContentPane().add(InformationProfessorButton);
+        InformationProfessorButton.setBounds(510, 790, 170, 50);
 
-        Planificaion_Estrategica_de_TI.setBorder(null);
-        Planificaion_Estrategica_de_TI.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
+        jPanel1.setLayout(null);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plan.PNG"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(20, 10, 1070, 630);
+
+        TallerDeProgramacion.setBorder(null);
+        TallerDeProgramacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Planificaion_Estrategica_de_TIMouseClicked(evt);
+                TallerDeProgramacionMouseClicked(evt);
             }
         });
-        getContentPane().add(Planificaion_Estrategica_de_TI, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 180, 90, 80));
+        jPanel1.add(TallerDeProgramacion);
+        TallerDeProgramacion.setBounds(130, 30, 100, 80);
 
-        Administracion_de_Servicios_de_TI_2.setBorder(null);
-        Administracion_de_Servicios_de_TI_2.addMouseListener(new java.awt.event.MouseAdapter() {
+        OrganizacionArquitecturaComputadores.setBorder(null);
+        OrganizacionArquitecturaComputadores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Administracion_de_Servicios_de_TI_2MouseClicked(evt);
+                OrganizacionArquitecturaComputadoresMouseClicked(evt);
             }
         });
-        getContentPane().add(Administracion_de_Servicios_de_TI_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 90, 90, 80));
+        jPanel1.add(OrganizacionArquitecturaComputadores);
+        OrganizacionArquitecturaComputadores.setBounds(240, 30, 90, 80);
 
-        Bases_de_Datos.setBorder(null);
-        Bases_de_Datos.addMouseListener(new java.awt.event.MouseAdapter() {
+        LenguajesDeProgramacion.setBorder(null);
+        LenguajesDeProgramacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Bases_de_DatosMouseClicked(evt);
+                LenguajesDeProgramacionMouseClicked(evt);
             }
         });
-        getContentPane().add(Bases_de_Datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 90, 80));
-
-        Bases_de_Datos_Avanzadas.setBorder(null);
-        Bases_de_Datos_Avanzadas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Bases_de_Datos_AvanzadasMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Bases_de_Datos_Avanzadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 100, 80));
-
-        Diseño_de_Softaware.setBorder(null);
-        Diseño_de_Softaware.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Diseño_de_SoftawareMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Diseño_de_Softaware, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 90, 80));
-
-        Inteligencia_de_Negocios.setBorder(null);
-        Inteligencia_de_Negocios.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Inteligencia_de_NegociosMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Inteligencia_de_Negocios, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 90, 80));
-
-        Negocios_Electronicos.setBorder(null);
-        Negocios_Electronicos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Negocios_ElectronicosMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Negocios_Electronicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 90, 100, 80));
-
-        Administracion_de_Servicios_de_TI_1.setBorder(null);
-        Administracion_de_Servicios_de_TI_1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Administracion_de_Servicios_de_TI_1MouseClicked(evt);
-            }
-        });
-        getContentPane().add(Administracion_de_Servicios_de_TI_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 90, 90, 80));
+        jPanel1.add(LenguajesDeProgramacion);
+        LenguajesDeProgramacion.setBounds(350, 30, 90, 80);
 
         Introduccion_a_la_programacion.setBorder(null);
         Introduccion_a_la_programacion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -214,63 +190,17 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
                 Introduccion_a_la_programacionMouseClicked(evt);
             }
         });
-        getContentPane().add(Introduccion_a_la_programacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 100, 80));
+        jPanel1.add(Introduccion_a_la_programacion);
+        Introduccion_a_la_programacion.setBounds(130, 120, 100, 80);
 
-        Auditoria_de_TI.setBorder(null);
-        Auditoria_de_TI.addMouseListener(new java.awt.event.MouseAdapter() {
+        Algoritmos_y_Estructuras_de_Datos.setBorder(null);
+        Algoritmos_y_Estructuras_de_Datos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Auditoria_de_TIMouseClicked(evt);
+                Algoritmos_y_Estructuras_de_DatosMouseClicked(evt);
             }
         });
-        getContentPane().add(Auditoria_de_TI, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 270, 90, 70));
-
-        Administracion_de_proyectos_1.setBorder(null);
-        Administracion_de_proyectos_1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Administracion_de_proyectos_1MouseClicked(evt);
-            }
-        });
-        getContentPane().add(Administracion_de_proyectos_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 90, 70));
-
-        Administracion_de_proyectos_2.setBorder(null);
-        Administracion_de_proyectos_2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Administracion_de_proyectos_2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(Administracion_de_proyectos_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 90, 70));
-
-        Ingenieria_de_requerimientos.setBorder(null);
-        Ingenieria_de_requerimientos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Ingenieria_de_requerimientosMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Ingenieria_de_requerimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 100, 70));
-
-        Comportamiento_Organizacional_y_Gestion_del_Cambio.setBorder(null);
-        Comportamiento_Organizacional_y_Gestion_del_Cambio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Comportamiento_Organizacional_y_Gestion_del_CambioMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Comportamiento_Organizacional_y_Gestion_del_Cambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 90, 80));
-
-        Especificacion_de_Software.setBorder(null);
-        Especificacion_de_Software.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Especificacion_de_SoftwareMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Especificacion_de_Software, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 90, 80));
-
-        Adquisicion_de_TI.setBorder(null);
-        Adquisicion_de_TI.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Adquisicion_de_TIMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Adquisicion_de_TI, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 180, 90, 80));
+        jPanel1.add(Algoritmos_y_Estructuras_de_Datos);
+        Algoritmos_y_Estructuras_de_Datos.setBounds(240, 120, 100, 80);
 
         Teorias_de_las_organizaciones_y_sus_procesos.setBorder(null);
         Teorias_de_las_organizaciones_y_sus_procesos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -278,15 +208,287 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
                 Teorias_de_las_organizaciones_y_sus_procesosMouseClicked(evt);
             }
         });
-        getContentPane().add(Teorias_de_las_organizaciones_y_sus_procesos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 100, 70));
+        jPanel1.add(Teorias_de_las_organizaciones_y_sus_procesos);
+        Teorias_de_las_organizaciones_y_sus_procesos.setBounds(130, 210, 100, 70);
 
-        Informacion_Contable_1.setBorder(null);
-        Informacion_Contable_1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Administracion_de_proyectos_1.setBorder(null);
+        Administracion_de_proyectos_1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Informacion_Contable_1MouseClicked(evt);
+                Administracion_de_proyectos_1MouseClicked(evt);
             }
         });
-        getContentPane().add(Informacion_Contable_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 100, 70));
+        jPanel1.add(Administracion_de_proyectos_1);
+        Administracion_de_proyectos_1.setBounds(240, 210, 90, 70);
+
+        Bases_de_Datos.setBorder(null);
+        Bases_de_Datos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bases_de_DatosMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Bases_de_Datos);
+        Bases_de_Datos.setBounds(350, 120, 90, 80);
+
+        Administracion_de_proyectos_2.setBorder(null);
+        Administracion_de_proyectos_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Administracion_de_proyectos_2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(Administracion_de_proyectos_2);
+        Administracion_de_proyectos_2.setBounds(350, 210, 90, 70);
+
+        Ingenieria_de_requerimientos.setBorder(null);
+        Ingenieria_de_requerimientos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ingenieria_de_requerimientosMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Ingenieria_de_requerimientos);
+        Ingenieria_de_requerimientos.setBounds(450, 210, 100, 70);
+
+        Bases_de_Datos_Avanzadas.setBorder(null);
+        Bases_de_Datos_Avanzadas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bases_de_Datos_AvanzadasMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Bases_de_Datos_Avanzadas);
+        Bases_de_Datos_Avanzadas.setBounds(450, 120, 100, 80);
+
+        Infraestructura_Tecnologica_I.setBorder(null);
+        Infraestructura_Tecnologica_I.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Infraestructura_Tecnologica_IMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Infraestructura_Tecnologica_I);
+        Infraestructura_Tecnologica_I.setBounds(560, 30, 90, 80);
+
+        Diseño_de_Softaware.setBorder(null);
+        Diseño_de_Softaware.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Diseño_de_SoftawareMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Diseño_de_Softaware);
+        Diseño_de_Softaware.setBounds(560, 120, 90, 80);
+
+        Comportamiento_Organizacional_y_Gestion_del_Cambio.setBorder(null);
+        Comportamiento_Organizacional_y_Gestion_del_Cambio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Comportamiento_Organizacional_y_Gestion_del_CambioMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Comportamiento_Organizacional_y_Gestion_del_Cambio);
+        Comportamiento_Organizacional_y_Gestion_del_Cambio.setBounds(560, 250, 90, 80);
+
+        Especificacion_de_Software.setBorder(null);
+        Especificacion_de_Software.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Especificacion_de_SoftwareMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Especificacion_de_Software);
+        Especificacion_de_Software.setBounds(670, 210, 90, 80);
+
+        Inteligencia_de_Negocios.setBorder(null);
+        Inteligencia_de_Negocios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Inteligencia_de_NegociosMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Inteligencia_de_Negocios);
+        Inteligencia_de_Negocios.setBounds(670, 120, 90, 80);
+
+        Infraestructura_Tecnologica_II.setBorder(null);
+        Infraestructura_Tecnologica_II.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Infraestructura_Tecnologica_IIMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Infraestructura_Tecnologica_II);
+        Infraestructura_Tecnologica_II.setBounds(660, 30, 100, 80);
+
+        Arquitectura_de_Aplicaciones.setBorder(null);
+        Arquitectura_de_Aplicaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Arquitectura_de_AplicacionesMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Arquitectura_de_Aplicaciones);
+        Arquitectura_de_Aplicaciones.setBounds(770, 30, 90, 80);
+
+        Negocios_Electronicos.setBorder(null);
+        Negocios_Electronicos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Negocios_ElectronicosMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Negocios_Electronicos);
+        Negocios_Electronicos.setBounds(770, 120, 100, 80);
+
+        Administracion_de_Procesos_de_Negocios.setBorder(null);
+        Administracion_de_Procesos_de_Negocios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Administracion_de_Procesos_de_NegociosMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Administracion_de_Procesos_de_Negocios);
+        Administracion_de_Procesos_de_Negocios.setBounds(880, 30, 90, 80);
+
+        Administracion_de_Servicios_de_TI_1.setBorder(null);
+        Administracion_de_Servicios_de_TI_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Administracion_de_Servicios_de_TI_1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(Administracion_de_Servicios_de_TI_1);
+        Administracion_de_Servicios_de_TI_1.setBounds(880, 120, 90, 80);
+
+        Sistemas_de_Informacion_Empresarial.setBorder(null);
+        Sistemas_de_Informacion_Empresarial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Sistemas_de_Informacion_EmpresarialMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Sistemas_de_Informacion_Empresarial);
+        Sistemas_de_Informacion_Empresarial.setBounds(990, 30, 90, 80);
+
+        Administracion_de_Servicios_de_TI_2.setBorder(null);
+        Administracion_de_Servicios_de_TI_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Administracion_de_Servicios_de_TI_2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(Administracion_de_Servicios_de_TI_2);
+        Administracion_de_Servicios_de_TI_2.setBounds(990, 120, 90, 80);
+
+        Planificaion_Estrategica_de_TI.setBorder(null);
+        Planificaion_Estrategica_de_TI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Planificaion_Estrategica_de_TIMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Planificaion_Estrategica_de_TI);
+        Planificaion_Estrategica_de_TI.setBounds(990, 210, 90, 80);
+
+        Adquisicion_de_TI.setBorder(null);
+        Adquisicion_de_TI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Adquisicion_de_TIMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Adquisicion_de_TI);
+        Adquisicion_de_TI.setBounds(880, 210, 90, 80);
+
+        Electiva1.setBorder(null);
+        Electiva1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Electiva1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(Electiva1);
+        Electiva1.setBounds(770, 210, 100, 80);
+
+        Auditoria_de_TI.setBorder(null);
+        Auditoria_de_TI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Auditoria_de_TIMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Auditoria_de_TI);
+        Auditoria_de_TI.setBounds(880, 300, 90, 70);
+
+        Consultoria_de_TI.setBorder(null);
+        Consultoria_de_TI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Consultoria_de_TIMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Consultoria_de_TI);
+        Consultoria_de_TI.setBounds(990, 300, 90, 70);
+
+        Espiritu_Emprendedor_y_Creacion_de_Empresas.setBorder(null);
+        Espiritu_Emprendedor_y_Creacion_de_Empresas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Espiritu_Emprendedor_y_Creacion_de_EmpresasMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Espiritu_Emprendedor_y_Creacion_de_Empresas);
+        Espiritu_Emprendedor_y_Creacion_de_Empresas.setBounds(980, 380, 100, 80);
+
+        Formulacion_y_Evaluacion_de_Proyectos_de_TI.setBorder(null);
+        Formulacion_y_Evaluacion_de_Proyectos_de_TI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Formulacion_y_Evaluacion_de_Proyectos_de_TIMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Formulacion_y_Evaluacion_de_Proyectos_de_TI);
+        Formulacion_y_Evaluacion_de_Proyectos_de_TI.setBounds(880, 380, 90, 80);
+
+        Electiva2.setBorder(null);
+        Electiva2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Electiva2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(Electiva2);
+        Electiva2.setBounds(980, 470, 90, 70);
+
+        Gestion_de_Recursos_Humanos.setBorder(null);
+        Gestion_de_Recursos_Humanos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Gestion_de_Recursos_HumanosMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Gestion_de_Recursos_Humanos);
+        Gestion_de_Recursos_Humanos.setBounds(770, 470, 90, 70);
+
+        Modelo_de_Toma_de_Decisiones.setBorder(null);
+        Modelo_de_Toma_de_Decisiones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Modelo_de_Toma_de_DecisionesMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Modelo_de_Toma_de_Decisiones);
+        Modelo_de_Toma_de_Decisiones.setBounds(770, 380, 100, 80);
+
+        Produccion_Logistica_y_Calidad.setBorder(null);
+        Produccion_Logistica_y_Calidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Produccion_Logistica_y_CalidadMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Produccion_Logistica_y_Calidad);
+        Produccion_Logistica_y_Calidad.setBounds(660, 380, 100, 80);
+
+        Mercadeo_de_Productos_de_Alta_Calidad.setBorder(null);
+        Mercadeo_de_Productos_de_Alta_Calidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Mercadeo_de_Productos_de_Alta_CalidadMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Mercadeo_de_Productos_de_Alta_Calidad);
+        Mercadeo_de_Productos_de_Alta_Calidad.setBounds(670, 470, 90, 70);
+
+        Gestion_y_Toma_de_Decisiones_Financieras.setBorder(null);
+        Gestion_y_Toma_de_Decisiones_Financieras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Gestion_y_Toma_de_Decisiones_FinancierasMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Gestion_y_Toma_de_Decisiones_Financieras);
+        Gestion_y_Toma_de_Decisiones_Financieras.setBounds(560, 470, 90, 70);
+
+        Economia.setBorder(null);
+        Economia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EconomiaMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Economia);
+        Economia.setBounds(450, 470, 100, 70);
 
         Planificacion_y_Presupuesto.setBorder(null);
         Planificacion_y_Presupuesto.setName(""); // NOI18N
@@ -295,87 +497,8 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
                 Planificacion_y_PresupuestoMouseClicked(evt);
             }
         });
-        getContentPane().add(Planificacion_y_Presupuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 530, 100, 70));
-
-        Economia.setBorder(null);
-        Economia.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                EconomiaMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Economia, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, 100, 70));
-
-        Gestion_y_Toma_de_Decisiones_Financieras.setBorder(null);
-        Gestion_y_Toma_de_Decisiones_Financieras.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Gestion_y_Toma_de_Decisiones_FinancierasMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Gestion_y_Toma_de_Decisiones_Financieras, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 90, 70));
-
-        Mercadeo_de_Productos_de_Alta_Calidad.setBorder(null);
-        Mercadeo_de_Productos_de_Alta_Calidad.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Mercadeo_de_Productos_de_Alta_CalidadMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Mercadeo_de_Productos_de_Alta_Calidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, 90, 70));
-
-        Gestion_de_Recursos_Humanos.setBorder(null);
-        Gestion_de_Recursos_Humanos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Gestion_de_Recursos_HumanosMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Gestion_de_Recursos_Humanos, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 440, 90, 70));
-
-        Produccion_Logistica_y_Calidad.setBorder(null);
-        Produccion_Logistica_y_Calidad.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Produccion_Logistica_y_CalidadMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Produccion_Logistica_y_Calidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 350, 100, 80));
-
-        Consultoria_de_TI.setBorder(null);
-        Consultoria_de_TI.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Consultoria_de_TIMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Consultoria_de_TI, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 270, 90, 70));
-
-        Espiritu_Emprendedor_y_Creacion_de_Empresas.setBorder(null);
-        Espiritu_Emprendedor_y_Creacion_de_Empresas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Espiritu_Emprendedor_y_Creacion_de_EmpresasMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Espiritu_Emprendedor_y_Creacion_de_Empresas, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 350, 100, 80));
-
-        Formulacion_y_Evaluacion_de_Proyectos_de_TI.setBorder(null);
-        Formulacion_y_Evaluacion_de_Proyectos_de_TI.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Formulacion_y_Evaluacion_de_Proyectos_de_TIMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Formulacion_y_Evaluacion_de_Proyectos_de_TI, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 350, 90, 80));
-
-        Modelo_de_Toma_de_Decisiones.setBorder(null);
-        Modelo_de_Toma_de_Decisiones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Modelo_de_Toma_de_DecisionesMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Modelo_de_Toma_de_Decisiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, 100, 80));
-
-        Informacion_Contable_2.setBorder(null);
-        Informacion_Contable_2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Informacion_Contable_2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(Informacion_Contable_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 100, 70));
+        jPanel1.add(Planificacion_y_Presupuesto);
+        Planificacion_y_Presupuesto.setBounds(450, 560, 100, 70);
 
         Costos_en_Ambientes_Informaticos.setBorder(null);
         Costos_en_Ambientes_Informaticos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -383,101 +506,44 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
                 Costos_en_Ambientes_InformaticosMouseClicked(evt);
             }
         });
-        getContentPane().add(Costos_en_Ambientes_Informaticos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, 100, 70));
+        jPanel1.add(Costos_en_Ambientes_Informaticos);
+        Costos_en_Ambientes_Informaticos.setBounds(340, 560, 100, 70);
 
-        Algoritmos_y_Estructuras_de_Datos.setBorder(null);
-        Algoritmos_y_Estructuras_de_Datos.addMouseListener(new java.awt.event.MouseAdapter() {
+        Informacion_Contable_2.setBorder(null);
+        Informacion_Contable_2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Algoritmos_y_Estructuras_de_DatosMouseClicked(evt);
+                Informacion_Contable_2MouseClicked(evt);
             }
         });
-        getContentPane().add(Algoritmos_y_Estructuras_de_Datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 100, 80));
+        jPanel1.add(Informacion_Contable_2);
+        Informacion_Contable_2.setBounds(240, 470, 100, 70);
 
-        TallerDeProgramacion.setBorder(null);
-        TallerDeProgramacion.addMouseListener(new java.awt.event.MouseAdapter() {
+        Informacion_Contable_1.setBorder(null);
+        Informacion_Contable_1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TallerDeProgramacionMouseClicked(evt);
+                Informacion_Contable_1MouseClicked(evt);
             }
         });
-        getContentPane().add(TallerDeProgramacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 100, 80));
+        jPanel1.add(Informacion_Contable_1);
+        Informacion_Contable_1.setBounds(130, 470, 100, 70);
 
-        OrganizacionArquitecturaComputadores.setBorder(null);
-        OrganizacionArquitecturaComputadores.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OrganizacionArquitecturaComputadoresMouseClicked(evt);
-            }
-        });
-        getContentPane().add(OrganizacionArquitecturaComputadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 90, 80));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(50, 120, 1110, 650);
 
-        LenguajesDeProgramacion.setBorder(null);
-        LenguajesDeProgramacion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LenguajesDeProgramacionMouseClicked(evt);
-            }
-        });
-        getContentPane().add(LenguajesDeProgramacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 90, 80));
+        jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Consultoría: Profesores ATI");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(290, 20, 660, 40);
 
-        Infraestructura_Tecnologica_I.setBorder(null);
-        Infraestructura_Tecnologica_I.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Infraestructura_Tecnologica_IMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Infraestructura_Tecnologica_I, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 90, 80));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("Haga click en un curso de carrera para ver más información:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(50, 90, 420, 20);
 
-        Infraestructura_Tecnologica_II.setBorder(null);
-        Infraestructura_Tecnologica_II.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Infraestructura_Tecnologica_IIMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Infraestructura_Tecnologica_II, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 100, 80));
-
-        Arquitectura_de_Aplicaciones.setBorder(null);
-        Arquitectura_de_Aplicaciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Arquitectura_de_AplicacionesMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Arquitectura_de_Aplicaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, 90, 80));
-
-        Administracion_de_Procesos_de_Negocios.setBorder(null);
-        Administracion_de_Procesos_de_Negocios.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Administracion_de_Procesos_de_NegociosMouseClicked(evt);
-            }
-        });
-        getContentPane().add(Administracion_de_Procesos_de_Negocios, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 90, 80));
-
-        Electiva1.setBorder(null);
-        Electiva1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Electiva1MouseClicked(evt);
-            }
-        });
-        getContentPane().add(Electiva1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 180, 100, 80));
-
-        Electiva2.setBorder(null);
-        Electiva2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Electiva2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(Electiva2, new org.netbeans.lib.awtextra.AbsoluteConstraints(953, 443, 90, 70));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plan.PNG"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -60, 1070, 730));
-
-        InformationProfessorButton.setText("Información Profesores");
-        InformationProfessorButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InformationProfessorButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(InformationProfessorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 620, -1, -1));
-
-        pack();
+        setSize(new java.awt.Dimension(1216, 899));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Sistemas_de_Informacion_EmpresarialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sistemas_de_Informacion_EmpresarialMouseClicked
@@ -650,14 +716,8 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
         try {
             new VentanaNombreProfesores().setVisible(true);
             
-// TODO add your handling code here:
-        } catch (IOException ex) {
-            Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NoSuchMethodException ex) {
-            Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InvocationTargetException ex) {
-            Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        // TODO add your handling code here:
+        } catch (IOException | NoSuchMethodException | InvocationTargetException | IllegalAccessException ex) {
             Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_InformationProfessorButtonActionPerformed
@@ -666,6 +726,7 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -678,18 +739,11 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrameProfesoresInteresadoEnCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PlanCapacitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -745,5 +799,8 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
     private javax.swing.JButton TallerDeProgramacion;
     private javax.swing.JButton Teorias_de_las_organizaciones_y_sus_procesos;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

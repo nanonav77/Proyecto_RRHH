@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import consultoria.DatosProfesor;
 import consultoria.LeerDatos;
 import Consultas.Consultas;
+import consultoria.SeccionActividadesCapacitacionFormal;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -47,15 +48,19 @@ public class VentanaNombreProfesores extends javax.swing.JFrame {
         TablaInformativa = new javax.swing.JTable();
         javax.swing.JButton BackPlanCarrera = new javax.swing.JButton();
         InformationButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Lista de Profesores");
+        getContentPane().setLayout(null);
 
+        TablaInformativa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         TablaInformativa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nombre de los profesores"
+                "Lista de profesores"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -66,6 +71,7 @@ public class VentanaNombreProfesores extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        TablaInformativa.setRowHeight(25);
         TablaInformativa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TablaInformativaMouseClicked(evt);
@@ -74,48 +80,42 @@ public class VentanaNombreProfesores extends javax.swing.JFrame {
         jScrollPane1.setViewportView(TablaInformativa);
         TablaInformativa.getAccessibleContext().setAccessibleName("");
 
-        BackPlanCarrera.setText("Plan de carrera");
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(30, 10, 530, 550);
+
+        BackPlanCarrera.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        BackPlanCarrera.setText("Volver");
         BackPlanCarrera.setToolTipText("");
         BackPlanCarrera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackPlanCarreraActionPerformed(evt);
             }
         });
+        getContentPane().add(BackPlanCarrera);
+        BackPlanCarrera.setBounds(240, 670, 105, 30);
 
-        InformationButton.setText("Ver información del profesor seleccionado");
+        InformationButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        InformationButton.setText("Información del profesor");
         InformationButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InformationButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(InformationButton);
+        InformationButton.setBounds(30, 590, 240, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BackPlanCarrera)
-                        .addGap(179, 179, 179)
-                        .addComponent(InformationButton))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BackPlanCarrera)
-                    .addComponent(InformationButton))
-                .addContainerGap(101, Short.MAX_VALUE))
-        );
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton1.setText("Plan de Capacitacion");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(320, 590, 240, 40);
 
-        pack();
+        setSize(new java.awt.Dimension(596, 759));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackPlanCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackPlanCarreraActionPerformed
@@ -127,7 +127,7 @@ public class VentanaNombreProfesores extends javax.swing.JFrame {
     private void InformationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InformationButtonActionPerformed
         
         if (TablaInformativa.getSelectedRow() == -1) {
-            JOptionPane.showMessageDialog(this,"No hay ningún profesor seleccionado");
+            JOptionPane.showMessageDialog(null, "No hay ningún profesor seleccionado","Mensaje de error",JOptionPane.WARNING_MESSAGE);
     }
         else {
             int selectedRow = TablaInformativa.getSelectedRow();
@@ -152,6 +152,25 @@ public class VentanaNombreProfesores extends javax.swing.JFrame {
     private void TablaInformativaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaInformativaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_TablaInformativaMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (TablaInformativa.getSelectedRow() == -1) 
+            JOptionPane.showMessageDialog(null, "No hay ningún profesor seleccionado","Mensaje de error",JOptionPane.WARNING_MESSAGE);
+        else {
+            int selectedRow = TablaInformativa.getSelectedRow();
+            try {
+                SeccionActividadesCapacitacionFormal.datosConsulturiaProfesor = LeerDatos.procesarBaseDatosExcel(selectedRow);
+            } catch (IOException ex) {}
+            boolean enco = SeccionActividadesCapacitacionFormal.verificarSiConsideraQueRequiereActividadesComoParteDeSuCapacitacionFormalProfesor();
+            if(enco){
+                this.dispose();
+                try {
+                    new PlanCapacitacion(selectedRow).setVisible(true);
+                } catch (IOException ex) {}
+            } else
+                JOptionPane.showMessageDialog(null, "El profesor seleccionado no considera que requiere capacitación","Mensaje de informacion",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,6 +243,7 @@ public class VentanaNombreProfesores extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton InformationButton;
     private javax.swing.JTable TablaInformativa;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,9 +27,9 @@ public class SeccionActividadesCapacitacionFormal {
         ArrayList<String> actividades = new ArrayList<String>();
         
         for(int i=119;i<=121;i++){
-            
+            if(!datosConsulturiaProfesor.getCell(1, i).getContents().toString().equals("")){
                 actividades.add(datosConsulturiaProfesor.getCell(1, i).getContents().toString());
-            
+            }
             
         }
         
@@ -85,6 +85,53 @@ public class SeccionActividadesCapacitacionFormal {
    public static String obtenerAñoQueEstimaDurarEnCadaCapacitacionFormalProfesor(){
        
        return datosConsulturiaProfesor.getCell(1, 148).getContents().toString();
+      
+   }
+   
+   public static ArrayList<String> obtenerHabilidadesBlandasCapacitacionFormalProfesor(){
+        
+        ArrayList<String> lista = new ArrayList<String>();
+        
+        for(int i=150;i<=169;i++){
+            if(datosConsulturiaProfesor.getCell(1, i).getContents().toString().equals("X")){
+            	lista.add(datosConsulturiaProfesor.getCell(0, i).getContents().toString());
+            }
+        }
+        return lista;
+    }
+   
+    public static ArrayList<String> obtenerComoFortalecerHabilidadesBlandasCapacitacionFormalProfesor(){
+        
+        ArrayList<String> lista = new ArrayList<String>();
+        
+        for(int i=171;i<=178;i++){
+            if(datosConsulturiaProfesor.getCell(1, i).getContents().toString().equals("X")){
+            	lista.add(datosConsulturiaProfesor.getCell(0, i).getContents().toString());
+            }
+        }
+        return lista;
+    }
+    
+    public static ArrayList<String> obtenerPeriodosFortalecerHabilidadesBlandasCapacitacionFormalProfesor(){
+        
+        ArrayList<String> lista = new ArrayList<String>();
+        
+        for(int i=180;i<=189;i++){
+            if(datosConsulturiaProfesor.getCell(1, i).getContents().toString().equals("X")){
+            	lista.add(datosConsulturiaProfesor.getCell(0, i).getContents().toString());
+            }
+        }
+        return lista;
+    }
+    
+    public static String obtenerLugarDondeRealizarHabilidadesCapacitacionFormalProfesor(){
+        
+        return datosConsulturiaProfesor.getCell(1, 191).getContents().toString();
+   }
+    
+    public static String obtenerAñoHabilidadesCapacitacionFormalProfesor(){
+       
+       return datosConsulturiaProfesor.getCell(1, 193).getContents().toString();
       
    }
 }
