@@ -87,7 +87,6 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        InformationProfessorButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         TallerDeProgramacion = new javax.swing.JButton();
@@ -133,21 +132,12 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
         Informacion_Contable_1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        InformationProfessorButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Consultoría ATI");
         setResizable(false);
         getContentPane().setLayout(null);
-
-        InformationProfessorButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        InformationProfessorButton.setText("Profesores");
-        InformationProfessorButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InformationProfessorButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(InformationProfessorButton);
-        InformationProfessorButton.setBounds(510, 790, 170, 50);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
@@ -541,6 +531,16 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
         jLabel3.setText("Haga click en un curso de carrera para ver más información:");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(50, 90, 420, 20);
+
+        InformationProfessorButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        InformationProfessorButton.setText("Profesores");
+        InformationProfessorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InformationProfessorButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(InformationProfessorButton);
+        InformationProfessorButton.setBounds(50, 20, 170, 50);
 
         setSize(new java.awt.Dimension(1216, 899));
         setLocationRelativeTo(null);

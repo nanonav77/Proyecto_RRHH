@@ -71,7 +71,7 @@ public class InformacionProfesor extends javax.swing.JFrame {
         TablaInformativaProfesor.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         TablaInformativaProfesor.setIntercellSpacing(new java.awt.Dimension(0, 0));
         TablaInformativaProfesor.setRequestFocusEnabled(false);
-        TablaInformativaProfesor.setRowHeight(70);
+        TablaInformativaProfesor.setRowHeight(50);
         jScrollPane1.setViewportView(TablaInformativaProfesor);
         if (TablaInformativaProfesor.getColumnModel().getColumnCount() > 0) {
             TablaInformativaProfesor.getColumnModel().getColumn(0).setPreferredWidth(200);
@@ -96,7 +96,7 @@ public class InformacionProfesor extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1626, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(743, 743, 743)
+                .addGap(737, 737, 737)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -104,10 +104,10 @@ public class InformacionProfesor extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         pack();

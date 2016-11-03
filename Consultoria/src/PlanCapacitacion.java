@@ -211,7 +211,7 @@ public class PlanCapacitacion extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(540, 790, 110, 40);
+        jButton1.setBounds(30, 20, 110, 40);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Profesor(a):");
