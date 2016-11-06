@@ -19,18 +19,16 @@ import java.util.logging.Logger;
  * @author Cristopher Inces
  */
 public class Consultas {
-    
-    
 
-    public static  ArrayList<String> ProfesoresInteresadosEnCurso(String curso) {
+    public static ArrayList<String> ProfesoresInteresadosEnCurso(String curso) {
         ArrayList<String> profesores = new ArrayList<>();
         for (int i = 0; i < LeerDatos.CantidadSheet(); i++) {
             try {
                 DatosProfesor.datosConsulturiaProfesor = LeerDatos.procesarBaseDatosExcel(i);
                 ArrayList<String> lista = DatosProfesor.obtenerCursosQueImpartiriaProfesor();
-                if (lista.contains(curso))
-                {
+                if (lista.contains(curso)) {
                     profesores.add(DatosProfesor.obtenerNombreProfesor());
+                    profesores.add(Integer.toString(i));
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
@@ -38,7 +36,8 @@ public class Consultas {
         }
         return profesores;
     }
-        public ArrayList<Object> getDataByMethod(String nombreMetodo) throws IOException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+
+    public ArrayList<Object> getDataByMethod(String nombreMetodo) throws IOException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         System.out.println(nombreMetodo);
         ArrayList<Object> datos = new ArrayList<>();
         for (int i = 0; i < LeerDatos.CantidadSheet(); i++) {
@@ -46,12 +45,10 @@ public class Consultas {
             Class datosProfesor = DatosProfesor.class;
             Method metodo = datosProfesor.getMethod(nombreMetodo);
             datos.add((Object) metodo.invoke(null, null).toString());
-      
+
         }
         //System.out.println(datos);
         return datos;
     }
-    
-    
 
 }

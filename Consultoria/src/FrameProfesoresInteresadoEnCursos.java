@@ -71,19 +71,10 @@ public class FrameProfesoresInteresadoEnCursos extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
 
     private void Consultar(String curso) {
-        String texto = "";
-        ArrayList<String> profesores = Consultas.ProfesoresInteresadosEnCurso(curso);
-        for (int i = 0; i < profesores.size(); i++) {
-            texto += "\n" + profesores.get(i);
-        }
-        if (texto.equals("")) {
-            texto = "No hay profesores interesados.";
-        }
-
-        JOptionPane.showMessageDialog(null, texto, curso, JOptionPane.DEFAULT_OPTION, null);
-      
+         ProfesoresInteresados mensaje = new ProfesoresInteresados();
+        mensaje.cargarTabla(curso);
+        mensaje.show();  
     }
-
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
