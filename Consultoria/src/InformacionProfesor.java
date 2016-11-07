@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import Consultas.Consultas;
+import consultoria.DatosProfesor;
+import consultoria.LeerDatos;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -69,14 +71,16 @@ public class InformacionProfesor extends javax.swing.JFrame {
         TablaInformativaProfesor.setAlignmentX(15.0F);
         TablaInformativaProfesor.setAlignmentY(10.0F);
         TablaInformativaProfesor.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        TablaInformativaProfesor.setColumnSelectionAllowed(true);
         TablaInformativaProfesor.setIntercellSpacing(new java.awt.Dimension(0, 0));
         TablaInformativaProfesor.setRequestFocusEnabled(false);
-        TablaInformativaProfesor.setRowHeight(50);
+        TablaInformativaProfesor.setRowHeight(30);
         jScrollPane1.setViewportView(TablaInformativaProfesor);
+        TablaInformativaProfesor.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (TablaInformativaProfesor.getColumnModel().getColumnCount() > 0) {
             TablaInformativaProfesor.getColumnModel().getColumn(0).setPreferredWidth(200);
             TablaInformativaProfesor.getColumnModel().getColumn(1).setResizable(false);
-            TablaInformativaProfesor.getColumnModel().getColumn(1).setPreferredWidth(1350);
+            TablaInformativaProfesor.getColumnModel().getColumn(1).setPreferredWidth(710);
         }
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -91,23 +95,19 @@ public class InformacionProfesor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1626, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 915, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(737, 737, 737)
+                .addContainerGap()
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -158,30 +158,32 @@ public class InformacionProfesor extends javax.swing.JFrame {
         });
     }
     
-        private ArrayList<ArrayList<Object>> llamarMetodos() throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException{
-            ArrayList<ArrayList<Object>> listaExtrema = new ArrayList<ArrayList<Object>>();
+        private ArrayList<String> llamarMetodos() throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException{
+            
+            ArrayList<String> listaExtrema = new ArrayList<String>();
             Consultas consult = new Consultas();
-            listaExtrema.add(consult.getDataByMethod("obtenerNombreProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerTipoIdentificacionProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerCedulaProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerNumeroPasaporteProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerPaisProcedenciaProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerPuestosActualmenteProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerAreaEspecialidadOTrabajoProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerCursosQueImpartiriaProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerRegimenPensionProfesor"));
-            listaExtrema.add(consult.getDataByMethod("conoceCuotasCanceladas"));
-            listaExtrema.add(consult.getDataByMethod("obtenerCuotasCanceladasProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerEdadPensionarseProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerTituloYGradoAcedemicoProfesor"));
-            listaExtrema.add(consult.getDataByMethod("obtenerEstudiosPegradoYUbicacionDondeLosObtuvoProfesor"));
+            DatosProfesor.datosConsulturiaProfesor = LeerDatos.procesarBaseDatosExcel(posProfesor);       
+            listaExtrema.add(DatosProfesor.obtenerNombreProfesor());
+            listaExtrema.add(DatosProfesor.obtenerTipoIdentificacionProfesor());
+            listaExtrema.add(DatosProfesor.obtenerCedulaProfesor());
+            listaExtrema.add(DatosProfesor.obtenerNumeroPasaporteProfesor());
+            listaExtrema.add(DatosProfesor.obtenerPaisProcedenciaProfesor());
+            listaExtrema.add(DatosProfesor.obtenerPuestosActualmenteProfesor().toString());
+            listaExtrema.add(DatosProfesor.obtenerAreaEspecialidadOTrabajoProfesor().toString());
+            listaExtrema.add(DatosProfesor.obtenerCursosQueImpartiriaProfesor().toString());
+            listaExtrema.add(DatosProfesor.obtenerRegimenPensionProfesor());
+            listaExtrema.add(DatosProfesor.conoceCuotasCanceladas());
+            listaExtrema.add(DatosProfesor.obtenerCuotasCanceladasProfesor());
+            listaExtrema.add(DatosProfesor.obtenerEdadPensionarseProfesor());
+            listaExtrema.add(DatosProfesor.obtenerTituloYGradoAcedemicoProfesor());
+            listaExtrema.add(DatosProfesor.obtenerEstudiosPegradoYUbicacionDondeLosObtuvoProfesor());
             
             return listaExtrema;
     }
         
     private void prepararTablaInformativa() throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException{
         
-        ArrayList<ArrayList<Object>> listaExtrema = this.llamarMetodos();
+        ArrayList<String> listaExtrema = this.llamarMetodos();
         Consultas consult = new Consultas();
         DefaultTableModel modelo = (DefaultTableModel) TablaInformativaProfesor.getModel();
         ArrayList<String> columnas = new ArrayList<String>();
@@ -199,8 +201,21 @@ public class InformacionProfesor extends javax.swing.JFrame {
         columnas.add("Edad de pensión");
         columnas.add("Grado académico");
         columnas.add("Pre-grado");
+        System.out.println(listaExtrema);
+        for (int i = 0; i < listaExtrema.size(); i++) {
+            Vector row = new Vector();
+            row.add(columnas.get(i));
+            try{
+                           row.add("<html>" + listaExtrema.get(i).replace("[","").replace("]","") +"</html>"); 
+            }
+            catch(Exception e){
+                            row.add(listaExtrema.get(i));
+            }
+            modelo.addRow(row);
+        }
         
-        for (int i = 0; i < 13; i++) {
+        
+      /*  for (int i = 0; i < listaExtrema.size(); i++) {
             System.out.println(listaExtrema.get(0));
             Vector row = new Vector();
             row.add(columnas.get(i));
@@ -212,7 +227,7 @@ public class InformacionProfesor extends javax.swing.JFrame {
             }
 
             modelo.addRow(row);
-        }
+        }*/
         //NewCellStyle gg = new NewCellStyle();
         //TablaInformativaProfesor.getcol("Información").setCellRenderer(gg);
         TablaInformativaProfesor.setModel(modelo);
