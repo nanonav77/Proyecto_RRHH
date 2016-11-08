@@ -1,8 +1,12 @@
 
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.FontFactory;
 import consultoria.DatosProfesor;
 import consultoria.LeerDatos;
 import consultoria.SeccionActividadesCapacitacionComplementaria;
 import consultoria.SeccionActividadesCapacitacionFormal;
+import generarPDF.DTOFormato;
+import generarPDF.PDF;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -32,6 +36,7 @@ public class PlanCapacitacion extends javax.swing.JFrame {
     
     int posProfesor;
     DefaultTableModel model;
+    String datos[][] = new String[12][2];;
     
     public PlanCapacitacion() {
         initComponents();
@@ -43,6 +48,26 @@ public class PlanCapacitacion extends javax.swing.JFrame {
         posProfesor = profeID;
         inicializarModel();
         llenarDatos();
+    }
+    
+    public void generarPDFCapacitacion(){
+        String[] Encabezado = {"Pregunta", "Respuesta"};
+
+        DTOFormato dto = new DTOFormato();
+        dto.setFondoEncabezado(new BaseColor(153, 204, 255));
+        dto.setFondoIntermedio(new BaseColor(216, 214, 214));
+        dto.setFormatoTexto(FontFactory.getFont(FontFactory.TIMES_ROMAN, 13, BaseColor.BLACK));
+
+        PDF pdf = new PDF(dto);
+        pdf.añadirTitulo("Plan de capacitación");
+        pdf.añadirSubtitulo("Profesor "+jLabelNombre.getText());
+        /*pdf.añadirTexto("Esto es una prueba de texto, ");
+        pdf.añadirCursiva("donde se pueden combinar diferentes formatos ");
+        pdf.añadirNegrita("en el mismo documento y poderlos almacenar");*/
+        pdf.añadirSalto();
+        pdf.añadirSalto();
+        pdf.añadirTabla(Encabezado, datos);
+        pdf.generarDocumento();
     }
     
     public void inicializarModel(){
@@ -68,6 +93,7 @@ public class PlanCapacitacion extends javax.swing.JFrame {
     }
     
     public void llenarDatos() throws IOException{
+        
         DatosProfesor.datosConsulturiaProfesor = LeerDatos.procesarBaseDatosExcel(posProfesor);
         jLabelNombre.setText(DatosProfesor.obtenerNombreProfesor());
         
@@ -172,6 +198,13 @@ public class PlanCapacitacion extends javax.swing.JFrame {
         jTable1.setModel(model);
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(300);
         jTable1.getColumnModel().getColumn(1).setPreferredWidth(800);
+        
+        //Generar matriz de datos para el PDF
+        for(int i=0;i<12;i++){
+            for(int j=0;j<2;j++){
+                datos[i][j] = model.getValueAt(i, j).toString();
+            }
+        }
     }
 
     /**
@@ -190,6 +223,7 @@ public class PlanCapacitacion extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plan de capacitación");
@@ -238,9 +272,19 @@ public class PlanCapacitacion extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(30, 130, 1140, 620);
+        jScrollPane2.setBounds(30, 130, 1140, 580);
 
-        setSize(new java.awt.Dimension(1216, 889));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setText("Reporte");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(1050, 20, 110, 40);
+
+        setSize(new java.awt.Dimension(1216, 769));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -252,6 +296,10 @@ public class PlanCapacitacion extends javax.swing.JFrame {
             Logger.getLogger(PlanCapacitacion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        generarPDFCapacitacion();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,6 +338,7 @@ public class PlanCapacitacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelNombre;
