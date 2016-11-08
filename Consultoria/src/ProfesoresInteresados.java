@@ -102,9 +102,9 @@ public class ProfesoresInteresados extends javax.swing.JFrame {
         for (int i = 0; i < profesores.size(); i= i+2) {
             if(profesores.get(i).equals(profe))
             {
-                DestallesProfesor temp = new DestallesProfesor();
+                DestallesProfesor temp = new DestallesProfesor(Integer.parseInt(profesores.get(i+1)));
                 System.out.println(profesores.get(i+1));
-                temp.CargarDatosProfesor(Integer.parseInt(profesores.get(i+1)));
+                temp.CargarDatosProfesor();
                 temp.show();
                 break;
             }

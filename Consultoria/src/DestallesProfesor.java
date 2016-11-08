@@ -1,7 +1,11 @@
 
 import Consultas.Consultas;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.FontFactory;
 import consultoria.DatosProfesor;
 import consultoria.LeerDatos;
+import generarPDF.DTOFormato;
+import generarPDF.PDF;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -21,14 +25,22 @@ public class DestallesProfesor extends javax.swing.JFrame {
 
     ArrayList<String> cursos = new ArrayList<>();
     ArrayList<String> especializacion = new ArrayList<>();
+    int Sheet=0;
 
     /**
      * Creates new form DestallesProfesor
      */
-    public DestallesProfesor() {
+    public DestallesProfesor(int Sheet) {
         initComponents();
+        this.Sheet=Sheet;
         //LlenarTablas();
-
+        try {
+            DatosProfesor.datosConsulturiaProfesor = LeerDatos.procesarBaseDatosExcel(Sheet);
+        } catch (IOException ex) {
+            Logger.getLogger(DestallesProfesor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        especializacion = DatosProfesor.obtenerAreaEspecialidadOTrabajoProfesor();
+        cursos = DatosProfesor.obtenerCursosQueImpartiriaProfesor();
     }
 
     /**
@@ -81,6 +93,11 @@ public class DestallesProfesor extends javax.swing.JFrame {
         jScrollPane2.setViewportView(TablaAreas);
 
         jButton1.setText("Reporte");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,9 +127,9 @@ public class DestallesProfesor extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
@@ -123,17 +140,37 @@ public class DestallesProfesor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void CargarDatosProfesor(int Sheet) {
-        
-        
-        try {
-            DatosProfesor.datosConsulturiaProfesor = LeerDatos.procesarBaseDatosExcel(Sheet);
-        } catch (IOException ex) {
-            Logger.getLogger(DestallesProfesor.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        especializacion = DatosProfesor.obtenerAreaEspecialidadOTrabajoProfesor();
-        cursos = DatosProfesor.obtenerCursosQueImpartiriaProfesor();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        DTOFormato dto = new DTOFormato();
+        dto.setFondoEncabezado(new BaseColor(204, 255, 102));
+        dto.setFondoIntermedio(new BaseColor(216, 214, 214));
+        dto.setFormatoTexto(FontFactory.getFont(FontFactory.HELVETICA, 13, BaseColor.BLACK));
 
+        PDF pdf = new PDF(dto);
+        pdf.añadirTitulo(DatosProfesor.obtenerNombreProfesor());
+        pdf.añadirSubtitulo("Cursos que impartiria profesor");
+        String[] Encabezado1 = {"Curso"};
+        String[][] List1 = new String[cursos.size()][1];
+        for (int i = 0 ; i < cursos.size() ; i++){
+            String[] temp = {cursos.get(i)};
+            List1[i]=temp;
+        }
+        pdf.añadirTabla(Encabezado1, List1);
+        pdf.añadirSalto();
+        
+        pdf.añadirSubtitulo("Areas de especialización del profesor");
+        String[] Encabezado2 = {"Areas de Especializacion"};
+        String[][] List2 = new String[especializacion.size()][1];
+        for (int i = 0 ; i < especializacion.size() ; i++){
+            String[] temp = {especializacion.get(i)};
+            List2[i]=temp;
+        }
+        pdf.añadirTabla(Encabezado2, List2);
+        
+        pdf.generarDocumento();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    public void CargarDatosProfesor() {
         this.setTitle(DatosProfesor.obtenerNombreProfesor());
         
         DefaultTableModel modelocursos = new DefaultTableModel();
@@ -163,37 +200,6 @@ public class DestallesProfesor extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DestallesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DestallesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DestallesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DestallesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DestallesProfesor().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablaAreas;
