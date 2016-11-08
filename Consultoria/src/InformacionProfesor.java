@@ -3,8 +3,12 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import Consultas.Consultas;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.FontFactory;
 import consultoria.DatosProfesor;
 import consultoria.LeerDatos;
+import generarPDF.DTOFormato;
+import generarPDF.PDF;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +31,7 @@ public class InformacionProfesor extends javax.swing.JFrame {
      *
      */
     int posProfesor;
+    String datos[][] = new String[14][2];;
     public InformacionProfesor(int profesorRow) throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         posProfesor = profesorRow;
         initComponents();
@@ -48,6 +53,7 @@ public class InformacionProfesor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaInformativaProfesor = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Informacion del profesor");
@@ -91,6 +97,14 @@ public class InformacionProfesor extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setText("Reporte");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,14 +113,18 @@ public class InformacionProfesor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -123,6 +141,10 @@ public class InformacionProfesor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.generarPDFInfoGeneral();
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -161,7 +183,7 @@ public class InformacionProfesor extends javax.swing.JFrame {
         private ArrayList<String> llamarMetodos() throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException{
             
             ArrayList<String> listaExtrema = new ArrayList<String>();
-            Consultas consult = new Consultas();
+     
             DatosProfesor.datosConsulturiaProfesor = LeerDatos.procesarBaseDatosExcel(posProfesor);       
             listaExtrema.add(DatosProfesor.obtenerNombreProfesor());
             listaExtrema.add(DatosProfesor.obtenerTipoIdentificacionProfesor());
@@ -179,6 +201,25 @@ public class InformacionProfesor extends javax.swing.JFrame {
             listaExtrema.add(DatosProfesor.obtenerEstudiosPegradoYUbicacionDondeLosObtuvoProfesor());
             
             return listaExtrema;
+    }
+            public void generarPDFInfoGeneral(){
+        String[] Encabezado = {"Profesor", "Información"};
+
+        DTOFormato dto = new DTOFormato();
+        dto.setFondoEncabezado(new BaseColor(153, 204, 255));
+        dto.setFondoIntermedio(new BaseColor(216, 214, 214));
+        dto.setFormatoTexto(FontFactory.getFont(FontFactory.TIMES_ROMAN, 13, BaseColor.BLACK));
+
+        PDF pdf = new PDF(dto);
+        pdf.añadirTitulo("Información general");
+        pdf.añadirSubtitulo("Profesor "+TablaInformativaProfesor.getModel().getValueAt(0,0));
+        /*pdf.añadirTexto("Esto es una prueba de texto, ");
+        pdf.añadirCursiva("donde se pueden combinar diferentes formatos ");
+        pdf.añadirNegrita("en el mismo documento y poderlos almacenar");*/
+        pdf.añadirSalto();
+        pdf.añadirSalto();
+        pdf.añadirTabla(Encabezado, this.datos);
+        pdf.generarDocumento();
     }
         
     private void prepararTablaInformativa() throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException{
@@ -214,7 +255,12 @@ public class InformacionProfesor extends javax.swing.JFrame {
             modelo.addRow(row);
         }
         
-        
+                //Generar matriz de datos para el PDF
+        for(int i=0;i<14;i++){
+            for(int j=0;j<2;j++){
+                datos[i][j] = modelo.getValueAt(i, j).toString().replace("<html>","").replace("</html>","");
+            }
+        }
       /*  for (int i = 0; i < listaExtrema.size(); i++) {
             System.out.println(listaExtrema.get(0));
             Vector row = new Vector();
@@ -238,6 +284,7 @@ public class InformacionProfesor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablaInformativaProfesor;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
