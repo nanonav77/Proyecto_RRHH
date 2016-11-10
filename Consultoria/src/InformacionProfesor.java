@@ -31,7 +31,7 @@ public class InformacionProfesor extends javax.swing.JFrame {
      *
      */
     int posProfesor;
-    String datos[][] = new String[14][2];;
+    String datos[][];
     public InformacionProfesor(int profesorRow) throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         posProfesor = profesorRow;
         initComponents();
@@ -86,7 +86,7 @@ public class InformacionProfesor extends javax.swing.JFrame {
         if (TablaInformativaProfesor.getColumnModel().getColumnCount() > 0) {
             TablaInformativaProfesor.getColumnModel().getColumn(0).setPreferredWidth(200);
             TablaInformativaProfesor.getColumnModel().getColumn(1).setResizable(false);
-            TablaInformativaProfesor.getColumnModel().getColumn(1).setPreferredWidth(710);
+            TablaInformativaProfesor.getColumnModel().getColumn(1).setPreferredWidth(705);
         }
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -109,23 +109,23 @@ public class InformacionProfesor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 915, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -212,7 +212,7 @@ public class InformacionProfesor extends javax.swing.JFrame {
 
         PDF pdf = new PDF(dto);
         pdf.añadirTitulo("Información general");
-        pdf.añadirSubtitulo("Profesor "+TablaInformativaProfesor.getModel().getValueAt(0,0));
+        pdf.añadirSubtitulo("Profesor "+TablaInformativaProfesor.getModel().getValueAt(0, 1));
         /*pdf.añadirTexto("Esto es una prueba de texto, ");
         pdf.añadirCursiva("donde se pueden combinar diferentes formatos ");
         pdf.añadirNegrita("en el mismo documento y poderlos almacenar");*/
@@ -242,40 +242,50 @@ public class InformacionProfesor extends javax.swing.JFrame {
         columnas.add("Edad de pensión");
         columnas.add("Grado académico");
         columnas.add("Pre-grado");
-        System.out.println(listaExtrema);
+      
         for (int i = 0; i < listaExtrema.size(); i++) {
-            Vector row = new Vector();
-            row.add(columnas.get(i));
-            try{
-                           row.add("<html>" + listaExtrema.get(i).replace("[","").replace("]","") +"</html>"); 
-            }
-            catch(Exception e){
-                            row.add(listaExtrema.get(i));
-            }
-            modelo.addRow(row);
-        }
-        
-                //Generar matriz de datos para el PDF
-        for(int i=0;i<14;i++){
-            for(int j=0;j<2;j++){
-                datos[i][j] = modelo.getValueAt(i, j).toString().replace("<html>","").replace("</html>","");
-            }
-        }
-      /*  for (int i = 0; i < listaExtrema.size(); i++) {
-            System.out.println(listaExtrema.get(0));
-            Vector row = new Vector();
-            row.add(columnas.get(i));
-            try{
-                           row.add("<html>" + listaExtrema.get(i).get(this.posProfesor).toString().replace("[","").replace("]","") +"</html>"); 
-            }
-            catch(Exception e){
-                            row.add(listaExtrema.get(i).get(this.posProfesor).toString());
-            }
 
-            modelo.addRow(row);
-        }*/
-        //NewCellStyle gg = new NewCellStyle();
-        //TablaInformativaProfesor.getcol("Información").setCellRenderer(gg);
+            ArrayList<String> data = new ArrayList<String>();
+
+            String temp = "";
+            int cont = 116;
+            int con2 = 0;
+            for (int j = 0; j < listaExtrema.get(i).length(); j++) {
+               
+                temp = temp + listaExtrema.get(i).charAt(j);
+                if (j > cont) {
+                    cont = cont + 120;
+                    data.add(temp);
+                    con2 ++;
+                    temp = "";
+                    
+                }
+            }
+            data.add(temp);
+
+                for (int j = 0; j < data.size(); j++) {
+                    Vector row = new Vector();
+                    if (j > 0){
+                        row.add("");
+                    }else {
+                      row.add(columnas.get(i));  
+                    }
+                    
+                    row.add(data.get(j).replace("[","").replace("]","")); 
+                    
+                    modelo.addRow(row);
+            }
+    
+        }
+     
+        datos = new String[modelo.getRowCount()][2];
+          //Generar matriz de datos para el PDF
+        for(int i=0;i<modelo.getRowCount();i++){
+            for(int j=0;j<2;j++){
+                datos[i][j] = modelo.getValueAt(i, j).toString();
+            }
+        }
+
         TablaInformativaProfesor.setModel(modelo);
        
         
