@@ -79,6 +79,7 @@ public class ProfesoresInteresados extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
      public void cargarTabla(String curso)
